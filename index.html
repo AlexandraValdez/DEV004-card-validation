@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8"> 
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <title>Tarjeta de crédito válida</title>  
+</head>
+
+<body>
+  <div class="contenedor">
+    <div class="verificacion">
+    <h1>Valida tu numero de tarjeta</h1>
+    <form action="/tarjeta.php"class="">
+      <input id="ccNumber" type="number" autocomplete="off" placeholder="Solo números" maxlength="14">
+      <input class="btn" type="button" value="check" onclick="checkCC()">
+      <textarea id="Validacion"  rows="3" disable="true"> </textarea>
+    </form>
+  </div>
+</div>
+
+  <script src="index.js"></script>
+  <script src="validator.js"></script>
+</body>
+
+</html>
