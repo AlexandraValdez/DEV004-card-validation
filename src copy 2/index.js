@@ -1,34 +1,29 @@
-
-import validator from './validator.js';
-
-console.log(validator);
-
+// eslint-disable-next-line no-unused-vars
 function checkCC () {
   const elCCNumber = document.getElementById('ccNumber');
   const elCCValidation = document.getElementById('Validacion');
   let message = "";
-
-  // eslint-disable-next-line no-cond-assign, no-constant-condition, no-undef
   if (elCCNumber.value.length === 0 ) {
-    message = 'Ingrese el numero de tarjeta'; 
-    // alert('esta vacio');
+    message = 'Ingrese el numero de tarjeta'
     elCCValidation.textContent = message;
-    elCCNumber.value = null;
-    return;
-  }
+    elCCNumber.value = null; 
+    return
+  } 
+
+  const lastDigit = elCCNumber.value.slice(-4);
+  const maskedStr = lastDigit.padStart(10, "#");
 
   // eslint-disable-next-line eqeqeq, no-undef
-  if (validator.isValid(elCCNumber.value))
+  if (luhnAlgorithm(elCCNumber.value))
     // eslint-disable-next-line no-undef
-    message = `La tarjeta ${validator.maskify(elCCNumber.value)} es valida`;
+    message = `La tarjeta ${maskedStr} es valida`;
 
 
   else
-    message = `El numero de la tarjeta ${validator.maskify(elCCNumber.value)} NO es valida`;
+    message = `El numero de la tarjeta ${maskedStr} NO es valida`;
   elCCValidation.textContent = message;
   elCCNumber.value = null;
 }
-
 
 
 
@@ -56,3 +51,4 @@ function checkCC () {
 //     }
 //   });
 // }
+

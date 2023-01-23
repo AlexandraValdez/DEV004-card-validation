@@ -10,16 +10,20 @@
 <body>
   <div class="contenedor">
     <div class="verificacion">
-    <h1>Valida tu numero de tarjeta</h1>
-    <form>
+    <h1>Valida tu número de tarjeta</h1> <br>
+        
+      <form>
       <input id="ccNumber" type="number" autocomplete="off" placeholder="Solo números" maxlength="14">
-      <input class="btn" type="button" value="check" onclick="checkCC">
+      <input class="btn" type="button" value="check" onclick="checkCC()">
       <textarea id="Validacion"  rows="3" disable="true"> </textarea>
-    </form>
+      </form>
   </div>
 </div>
 
-  <script src="index.js" type="module"></script>
+
+  <script src="index.js"></script>
+  <script src="validator.js"></script>
 </body>
 
 </html>
+
