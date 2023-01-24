@@ -4,13 +4,12 @@ import validator from './validator.js';
 const submitButton = document.getElementById('submit-button');
 submitButton.onclick = checkCC;
 
-function checkCC () {
+function checkCC (event) {
   event.preventDefault()
   const elCCNumber = document.getElementById('ccNumber');
   const elCCValidation = document.getElementById('Validacion');
   let message = "";
 
-  // eslint-disable-next-line no-cond-assign, no-constant-condition, no-undef
   if (elCCNumber.value.length === 0 ) {
     message = 'Ingrese el numero de tarjeta'; 
     // alert('esta vacio');
@@ -19,16 +18,15 @@ function checkCC () {
     return;
   }
 
-  // eslint-disable-next-line eqeqeq, no-undef
-  if (validator.isValid(elCCNumber.value))
-    // eslint-disable-next-line no-undef
+  if (validator.isValid(elCCNumber.value)) {
     message = `La tarjeta ${validator.maskify(elCCNumber.value)} es valida`;
-
-
-  else
+  }
+  else {
     message = `El numero de la tarjeta ${validator.maskify(elCCNumber.value)} NO es valida`;
-  elCCValidation.textContent = message;
-  elCCNumber.value = null;
+    elCCValidation.textContent = message;
+    elCCNumber.value = null;
+  }
+    
 }
 
 

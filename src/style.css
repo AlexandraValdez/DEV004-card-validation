@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-.contenedor {
+.container {
     width: 100vw;
     height: 100vh;
     background-color: #eee;
@@ -13,7 +13,7 @@
     align-items: center;
 }
 
-.verificacion {
+.verification-box {
     text-align: center;
     padding: 50px 30px;
     background-color: #fff;

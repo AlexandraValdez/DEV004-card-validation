@@ -3,16 +3,16 @@ const validator = {
     const length = ccNumber.length;
     let count = 0;
     
-    //reverse the credit card number, if index (i) is even double the value, if above 9 then adjust value
     for (let i = 0; i < length; i++) {
       let currentDigit = parseInt(ccNumber[i]);
     
-      if ((i + 1) % 2 === 0) //para saber si es divisible por 2 y si hay 0 residuos
-        // si es divisible por 2 entonces se multiplica por 2 y si excede se resta por 9 que es el numero maximo
-        if ((currentDigit *= 2) > 9)
-          currentDigit -= 9;
-    
-      count += currentDigit;
+      if ((i + 1) % 2 === 0) // para agarrar el segundo digito 
+        // si es divisible por 2 entonces se multiplica por 2 si es mayor que 9 
+        if ((currentDigit *= 2) > 9) {
+          currentDigit -= 9; // Para ajustar el valor, si se excede se resta por 9 ya que es el numero maximo
+        } 
+          
+      count += currentDigit; 
     
     }
     
