@@ -7,7 +7,7 @@ const validator = {
     for (let i = 0; i < length; i++) {
       let currentDigit = parseInt(ccNumber[i]);
     
-      if ((i + 2) % 2 === 0) //para saber si es divisible por 2 y si hay 0 residuos
+      if ((i + 1) % 2 === 0) //para saber si es divisible por 2 y si hay 0 residuos
         // si es divisible por 2 entonces se multiplica por 2 y si excede se resta por 9 que es el numero maximo
         if ((currentDigit *= 2) > 9)
           currentDigit -= 9;
@@ -20,8 +20,8 @@ const validator = {
     
   },
   maskify (ccNumber) {
-    const lastDigit = ccNumber.value.slice(-4);
-    const maskedStr = lastDigit.padStart(10, "#");
+    const lastDigit = ccNumber.slice(-4);
+    const maskedStr = lastDigit.padStart(ccNumber.length, "#");
     return maskedStr;
   },
 };

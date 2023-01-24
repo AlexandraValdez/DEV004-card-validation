@@ -1,9 +1,11 @@
 
 import validator from './validator.js';
 
-console.log(validator);
+const submitButton = document.getElementById('submit-button');
+submitButton.onclick = checkCC;
 
 function checkCC () {
+  event.preventDefault()
   const elCCNumber = document.getElementById('ccNumber');
   const elCCValidation = document.getElementById('Validacion');
   let message = "";
