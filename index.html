@@ -11,16 +11,15 @@
   <div class="contenedor">
     <div class="verificacion">
     <h1>Valida tu numero de tarjeta</h1>
-    <form action="/tarjeta.php"class="">
-      <input id="ccNumber" type="number" autocomplete="off" placeholder="Solo números" maxlength="14">
-      <input class="btn" type="button" value="check" onclick="checkCC()">
+    <form>
+      <input id="ccNumber" type="number" autocomplete="off" placeholder="Solo números" maxlength="14" required>
+      <input class="btn" type="submit" value="check" id="submit-button"> 
       <textarea id="Validacion"  rows="3" disable="true"> </textarea>
     </form>
   </div>
 </div>
 
-  <script src="index.js"></script>
-  <script src="validator.js"></script>
+  <script src="index.js" type="module"></script>
 </body>
 
 </html>
